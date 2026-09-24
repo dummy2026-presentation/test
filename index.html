@@ -1,1 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ARJUN MENON — Data Scientist | Python Developer | AI Enthusiast">
+<title>ARJUN MENON | Resume</title>
+<style>
+:root {
+  --ink: #172033;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --accent-dark: #1d4ed8;
+  --soft: #eff6ff;
+  --line: #e2e8f0;
+  --paper: #ffffff;
+  --bg: #f4f7fb;
+  --shadow: 0 18px 45px rgba(15, 23, 42, .09);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+}
+a { color: inherit; text-decoration: none; }
+.container { width: min(1080px, calc(100% - 36px)); margin: auto; }
+nav {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(255,255,255,.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner {
+  min-height: 64px; display: flex; align-items: center; justify-content: space-between;
+}
+.brand { font-weight: 800; letter-spacing: .08em; }
+.nav-links { display: flex; gap: 24px; font-size: 14px; color: var(--muted); }
+.nav-links a:hover { color: var(--accent); }
+.hero {
+  background: linear-gradient(135deg, #0f172a 0%, #172554 58%, #1d4ed8 100%);
+  color: white; padding: 86px 0 76px;
+}
+.hero-grid { display: grid; grid-template-columns: 1.5fr .5fr; gap: 40px; align-items: center; }
+.eyebrow { color: #bfdbfe; text-transform: uppercase; letter-spacing: .16em; font-size: 12px; font-weight: 800; }
+h1 { font-size: clamp(42px, 7vw, 72px); line-height: .98; margin: 14px 0; letter-spacing: -.04em; }
+.hero h2 { font-size: clamp(18px, 2.3vw, 25px); font-weight: 500; color: #dbeafe; margin: 0 0 20px; }
+.contact { color: #dbeafe; font-size: 14px; }
+.avatar {
+  width: 190px; height: 190px; margin-left: auto; border-radius: 50%;
+  display: grid; place-items: center; font-size: 62px; font-weight: 800;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25);
+}
+main { padding: 55px 0; }
+.section { margin-bottom: 60px; }
+.section-head { display: flex; align-items: baseline; gap: 15px; margin-bottom: 25px; }
+.section-head span { color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .12em; }
+h2.section-title { font-size: 28px; margin: 0; letter-spacing: -.02em; }
+.summary {
+  font-size: 18px; color: #334155; max-width: 850px; background: var(--paper);
+  border: 1px solid var(--line); border-radius: 16px; padding: 28px; box-shadow: var(--shadow);
+}
+.edu-grid, .skills-grid, .projects-grid {
+  display: grid; gap: 16px;
+}
+.edu-grid { grid-template-columns: repeat(3, 1fr); }
+.edu-item {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 14px;
+  padding: 20px; display: flex; flex-direction: column; justify-content: space-between;
+  min-height: 150px;
+}
+.edu-item h3, .skill-card h3, .project-card h3 { margin: 0 0 7px; font-size: 17px; }
+.edu-item p, .skill-card p, .project-card p { margin: 0; color: var(--muted); font-size: 14px; }
+.edu-item span, .date { color: var(--accent); font-weight: 800; font-size: 13px; }
+.timeline { position: relative; margin-left: 10px; }
+.timeline::before {
+  content: ""; position: absolute; left: 7px; top: 5px; bottom: 5px; width: 2px; background: var(--line);
+}
+.timeline-item { position: relative; display: flex; gap: 28px; margin-bottom: 32px; }
+.timeline-dot {
+  width: 16px; height: 16px; min-width: 16px; margin-top: 7px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 0 5px var(--soft); z-index: 1;
+}
+.timeline-content {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 16px;
+  padding: 23px; flex: 1; box-shadow: 0 8px 24px rgba(15,23,42,.04);
+}
+.role-row { display: flex; justify-content: space-between; gap: 20px; }
+.role-row h3 { margin: 0; font-size: 20px; }
+.company { margin: 2px 0 0; color: var(--accent); font-weight: 700; }
+.timeline-content ul { margin: 15px 0 0; padding-left: 20px; color: #475569; }
+.skills-grid { grid-template-columns: repeat(2, 1fr); }
+.skill-card { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+.skill-card h3::before { content: "▸"; color: var(--accent); margin-right: 8px; }
+.projects-grid { grid-template-columns: repeat(3, 1fr); }
+.project-card {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 16px;
+  padding: 23px; position: relative; overflow: hidden;
+}
+.project-number { color: var(--accent); font-weight: 900; font-size: 12px; letter-spacing: .12em; margin-bottom: 22px; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.info-card { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 25px; }
+.info-card ul { margin: 0; padding-left: 20px; color: #475569; }
+footer {
+  padding: 28px 0; background: #0f172a; color: #94a3b8; text-align: center; font-size: 12px;
+}
+.disclaimer { margin-top: 14px; color: #fbbf24; font-weight: 700; }
+@media (max-width: 800px) {
+  .hero-grid, .two-col { grid-template-columns: 1fr; }
+  .avatar { margin: 0; width: 130px; height: 130px; font-size: 44px; }
+  .edu-grid, .projects-grid, .skills-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .role-row { flex-direction: column; gap: 5px; }
+}
+@media print {
+  nav { display: none; }
+  .hero { padding: 40px 0; }
+  main { padding: 25px 0; }
+  .summary, .timeline-content, .edu-item, .skill-card, .project-card, .info-card { box-shadow: none; }
+  footer { margin-top: 20px; }
+}
+</style>
+</head>
+<body>
 
+<nav>
+  <div class="container nav-inner">
+    <a class="brand" href="#top">AM</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Professional Resume</div>
+      <h1>ARJUN MENON</h1>
+      <h2>Data Scientist | Python Developer | AI Enthusiast</h2>
+      <p class="contact">Kochi, Kerala · +91 98765 43210 · arjun.menon@example.com · linkedin.com/in/arjunmenon</p>
+    </div>
+    <div class="avatar" aria-label="Arjun Menon initials">AM</div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section" id="about">
+    <div class="section-head"><span>01</span><h2 class="section-title">Professional Summary</h2></div>
+    <div class="summary">Results-oriented data scientist with 4+ years of experience working with Python, machine learning, data analysis, and scientific computing. Experienced in developing data-driven applications, building predictive models, and communicating technical concepts to students and multidisciplinary teams.</div>
+  </section>
+
+  <section class="section" id="education">
+    <div class="section-head"><span>02</span><h2 class="section-title">Education</h2></div>
+    <div class="edu-grid"><div class="edu-item">
+        <div><h3>M.Sc. Chemistry</h3><p>University of Kerala</p></div>
+        <span>2020</span>
+    </div><div class="edu-item">
+        <div><h3>Professional Certificate in Data Science &amp; AI</h3><p>ABC Institute of Technology</p></div>
+        <span>2023</span>
+    </div><div class="edu-item">
+        <div><h3>Python Programming Certificate</h3><p>Global Online University</p></div>
+        <span>2022</span>
+    </div></div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="section-head"><span>03</span><h2 class="section-title">Professional Experience</h2></div>
+    <div class="timeline"><article class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="role-row">
+            <div><h3>AI &amp; Data Science Specialist</h3><p class="company">Nova Research Labs</p></div>
+            <span class="date">2024 – Present</span>
+          </div>
+          <ul><li>Develop Python-based data analysis and machine-learning workflows.</li><li>Build prototype AI applications for scientific and research use cases.</li><li>Collaborate with researchers and software developers to integrate predictive models.</li></ul>
+        </div>
+      </article><article class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="role-row">
+            <div><h3>Chemistry Lecturer</h3><p class="company">Greenfield College</p></div>
+            <span class="date">2021 – 2024</span>
+          </div>
+          <ul><li>Taught undergraduate chemistry courses and practical laboratory sessions.</li><li>Introduced Python and data-analysis concepts into selected chemistry activities.</li><li>Prepared assessments, course materials, and student project guidance.</li></ul>
+        </div>
+      </article></div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="section-head"><span>04</span><h2 class="section-title">Technical Skills</h2></div>
+    <div class="skills-grid"><div class="skill-card"><h3>Programming</h3><p>Python, SQL, HTML, CSS</p></div><div class="skill-card"><h3>Data Science</h3><p>Pandas, NumPy, Matplotlib, Scikit-learn</p></div><div class="skill-card"><h3>AI / ML</h3><p>Regression, classification, neural networks, model evaluation</p></div><div class="skill-card"><h3>Chemoinformatics</h3><p>RDKit, molecular descriptors, SMILES, molecular visualization</p></div><div class="skill-card"><h3>Tools</h3><p>Jupyter Notebook, Git, GitHub, Linux</p></div></div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="section-head"><span>05</span><h2 class="section-title">Selected Projects</h2></div>
+    <div class="projects-grid"><article class="project-card">
+        <div class="project-number">01</div>
+        <h3>Molecular Property Prediction</h3>
+        <p>Built a Python/ML workflow to predict molecular properties from chemical structure representations.</p>
+      </article><article class="project-card">
+        <div class="project-number">02</div>
+        <h3>Scientific Data Dashboard</h3>
+        <p>Created an interactive dashboard for exploring experimental datasets and generating summary visualizations.</p>
+      </article><article class="project-card">
+        <div class="project-number">03</div>
+        <h3>Student Python Workshop</h3>
+        <p>Designed beginner-friendly exercises introducing Python, Jupyter, GitHub, and scientific applications.</p>
+      </article></div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><span>06</span><h2 class="section-title">Certifications & Interests</h2></div>
+    <div class="two-col">
+      <div class="info-card">
+        <h3>Certifications</h3>
+        <ul><li>Professional Certificate in Data Science &amp; Artificial Intelligence</li><li>Python Programming for Data Science</li><li>Introduction to Machine Learning</li></ul>
+      </div>
+      <div class="info-card">
+        <h3>Achievements & Interests</h3>
+        <ul><li>Presented data-science applications at academic workshops.</li><li>Mentored students on Python-based scientific projects.</li></ul>
+        <p><strong>Interests:</strong> AI for science, molecular informatics, scientific visualization.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 ARJUN MENON · Online Resume
+    <div class="disclaimer">SAMPLE RESUME — ALL DETAILS ARE FICTIONAL AND CREATED FOR PRESENTATION PURPOSES</div>
+  </div>
+</footer>
+</body>
+</html>
